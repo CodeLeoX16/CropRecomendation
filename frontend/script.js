@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://croprecomendation-backend.onrender.com";
 
 const form = document.getElementById("cropForm");
 const resultCard = document.getElementById("resultCard");
