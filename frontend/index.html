@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HarvestIQ - Smart Crop Recommendation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-card">
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <h2>HarvestIQ</h2>
+      </div>  
+      <p class="subtitle">AI-Powered Precision Crop Recommendation System</p>
+    </header>
+
+    <!-- Weather Auto-Fetch bar -->
+    <div class="weather-bar">
+      <input type="text" id="cityInput" placeholder="Enter your city for live climate...">
+      <button id="fetchWeatherBtn"><i class="fa-solid fa-cloud-sun"></i> Auto-Fill Weather</button>
+    </div>
+
+    <!-- Input Form -->
+    <form id="cropForm" class="form-grid">
+      <div class="input-group">
+        <label><i class="fa-solid fa-leaf"></i> Nitrogen (N)</label>
+        <input type="number" id="nitrogen" step="0.1" placeholder="e.g. 80" required>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-flask"></i> Phosphorus (P)</label>
+        <input type="number" id="phosphorus" step="0.1" placeholder="e.g. 40" required>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-vial"></i> Potassium (K)</label>
+        <input type="number" id="potassium" step="0.1" placeholder="e.g. 40" required>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-temperature-three-quarters"></i> Temperature (°C)</label>
+        <input type="number" id="temperature" step="0.1" placeholder="e.g. 25.5" required>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-droplet"></i> Humidity (%)</label>
+        <input type="number" id="humidity" step="0.1" placeholder="e.g. 80.0" required>
+      </div>
+
+      <div class="input-group">
+        <label><i class="fa-solid fa-gauge-high"></i> Soil pH Level</label>
+        <input type="number" id="ph" step="0.1" min="0" max="14" placeholder="e.g. 6.5" required>
+      </div>
+
+      <div class="input-group full-width">
+        <label><i class="fa-solid fa-cloud-rain"></i> Rainfall (mm)</label>
+        <input type="number" id="rainfall" step="0.1" placeholder="e.g. 200.0" required>
+      </div>
+
+      <button type="submit" id="predictBtn" class="submit-btn full-width">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Get Crop Recommendation
+      </button>
+    </form>
+
+    <!-- Result Display Card -->
+    <div id="resultCard" class="result-card hidden">
+      <p class="res-title">Recommended Crop for Optimal Yield:</p>
+      <h1 id="cropResult">Rice</h1>
+      <span id="confidenceScore" class="confidence-badge">Confidence: 98.5%</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
